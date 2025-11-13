@@ -1,0 +1,19 @@
+<div class="loading-bar-container">
+      <div class="date-info">
+        <span class="date-label">Début: {{ startDate.toLocaleDateString('fr-FR') }}</span>
+        <span class="date-label">Fin: {{ endDate.toLocaleDateString('fr-FR') }}</span>
+      </div>
+      
+      <div class="progress-bar">
+        <div 
+          class="progress-fill"
+          [style.width.%]="progress()"
+          [class.complete]="progress() >= 100">
+        </div>
+      </div>
+      
+      <div class="progress-details">
+        <span class="progress-text">{{ progress().toFixed(1) }}% complété</span>
+        <span class="time-remaining">{{ timeRemaining() }}</span>
+      </div>
+    </div>
